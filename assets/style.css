@@ -156,3 +156,27 @@ hr {
     font-weight: 700;
     color: #f1f5f9;
 }
+
+/* ... (kode css yang sudah ada biarkan saja) ... */
+
+/* --- HIDE STREAMLIT BRANDING --- */
+
+/* 1. Menyembunyikan Menu Hamburger (Pojok Kanan Atas) */
+#MainMenu {
+    visibility: hidden;
+}
+
+/* 2. Menyembunyikan Footer "Made with Streamlit" */
+footer {
+    visibility: hidden;
+}
+
+/* 3. Menyembunyikan Header Garis Warna-warni di paling atas */
+header {
+    visibility: hidden;
+}
+
+/* 4. Trik Tambahan: Menyembunyikan tombol "Deploy" jika muncul */
+.stDeployButton {
+    display: none;
+}
