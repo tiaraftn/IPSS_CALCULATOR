@@ -157,26 +157,30 @@ hr {
     color: #f1f5f9;
 }
 
-/* ... (kode css yang sudah ada biarkan saja) ... */
+/* --- HIDE STREAMLIT BRANDING (ULTIMATE) --- */
 
-/* --- HIDE STREAMLIT BRANDING --- */
-
-/* 1. Menyembunyikan Menu Hamburger (Pojok Kanan Atas) */
+/* 1. Hilangkan Menu Hamburger (Kanan Atas) */
 #MainMenu {
     visibility: hidden;
+    display: none !important;
 }
 
-/* 2. Menyembunyikan Footer "Made with Streamlit" */
+/* 2. Hilangkan Footer Bawaan (Logo Streamlit & Tulisan "Made with") */
 footer {
     visibility: hidden;
+    display: none !important;
 }
 
-/* 3. Menyembunyikan Header Garis Warna-warni di paling atas */
+/* 3. Hilangkan Header Dekorasi (Garis warna-warni di atas) */
 header {
     visibility: hidden;
+    display: none !important;
 }
 
-/* 4. Trik Tambahan: Menyembunyikan tombol "Deploy" jika muncul */
-.stDeployButton {
-    display: none;
+/* 4. Hilangkan Viewer Badge (Foto Profil & Tombol Manage di kanan bawah) */
+/* Selector ini menargetkan container badge akun di Streamlit Cloud */
+div[data-testid="stToolbar"],
+div[class*="stViewerBadge"] {
+    visibility: hidden;
+    display: none !important;
 }
