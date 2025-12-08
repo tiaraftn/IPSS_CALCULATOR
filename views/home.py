@@ -1,7 +1,7 @@
 import streamlit as st
 
 def show_home():
-    # Header
+    # 1. HEADER
     st.markdown("""
         <div class="header-container">
             <div class="big-icon">🩺</div>
@@ -9,40 +9,39 @@ def show_home():
         </div>
     """, unsafe_allow_html=True)
 
-    # Deskripsi
+    # 2. DESKRIPSI
     st.markdown("""
         <div class="description-card">
             <div class="desc-title">
-                Selamat datang di ProstataCheck.</div>
+                Selamat datang di ProstataCheck.
+            </div>
             <div class="desc-body">
-                 Alat ini menggunakan metode IPSS (Skor Gejala Prostat Internasional), standar medis yang digunakan dokter di seluruh dunia untuk mendeteksi dini pembesaran prostat (BPH).
+                Alat ini menggunakan metode <b>IPSS (Skor Gejala Prostat Internasional)</b>, standar medis yang digunakan dokter di seluruh dunia untuk mendeteksi dini pembesaran prostat (BPH).
                 <br><br>
-                <i>Ketahui apakah gejala Bapak termasuk Ringan, Sedang, atau Berat, serta dapatkan saran perawatan yang tepat sekarang juga.</i>
+                <i>Ketahui apakah gejala Bapak termasuk Ringan, Sedang, atau Berat, serta dapatkan saran perawatan yang tepat sekarang juga.</i>
             </div>
         </div>
     """, unsafe_allow_html=True)
 
-   # 3. TOMBOL UTAMA (DI TENGAH)
+    # 3. TOMBOL UTAMA (DI TENGAH)
     st.write("") # Spacer
 
-    # --- PERBAIKAN DI SINI ---
-    # Menggunakan rasio [1, 2, 1] 
-    # Artinya: 25% Kiri Kosong - 50% Tombol Tengah - 25% Kanan Kosong
-    # Ini menjamin tombol berada PERSIS di tengah garis lurus dengan footer.
+    # Layout [1, 2, 1] agar tombol di tengah
     col_kiri, col_tombol, col_kanan = st.columns([1, 2, 1])
 
     with col_tombol:
+        # Teks tombol dibuat agak panjang agar proporsional
         if st.button("📝   MULAI PENGECEKAN KESEHATAN (IPSS)"):
             st.session_state['page'] = 'calculator'
             st.rerun()
-    # -------------------------
-    
+            
     st.markdown("<hr>", unsafe_allow_html=True)
     
     # 4. TOMBOL INFO & PENCEGAHAN
     col1, col2 = st.columns(2)
     with col1:
-        if st.button("ℹ️  Tentang Penyakit Benign Prostatic Hyperplasia (BPH)"):
+        # Menggunakan \n agar baris baru rapi di HP
+        if st.button("ℹ️  Tentang Penyakit\nBenign Prostatic Hyperplasia (BPH)"):
             st.session_state['page'] = 'about'
             st.rerun()
             
@@ -53,7 +52,7 @@ def show_home():
 
     # Footer
     st.markdown("""
-        <div style="text-align:center; margin-top:40px; color:#64748b; font-size:0.8rem;">
+        <div style="text-align:center; margin-top:40px; color:#94a3b8; font-size:0.8rem;">
             Medical Disclaimer: Aplikasi ini adalah alat skrining awal
         </div>
     """, unsafe_allow_html=True)

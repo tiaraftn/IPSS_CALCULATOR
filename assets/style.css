@@ -1,162 +1,168 @@
 /* --- FONTS --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap');
 
-/* --- COLORS & VARS --- */
+/* --- PAKSA TEMA TERANG (LIGHT THEME) --- */
 :root {
-    --bg-color: #0f172a;       /* Dark Navy Background */
-    --card-bg: #1e293b;        /* Slate Blue Card */
-    --text-primary: #f8fafc;   /* White text */
-    --text-secondary: #94a3b8; /* Muted text */
-    --accent: #38bdf8;         /* Cyan/Blue Accent */
-    --gold: #f59e0b;           /* Gold Icon */
+    --bg-color: #f8fafc;       /* Putih Bersih */
+    --card-bg: #ffffff;        /* Putih Kartu */
+    --text-primary: #1e293b;   /* Biru Gelap (Hampir Hitam) */
+    --text-secondary: #475569; /* Abu Gelap */
+    --accent: #0284c7;         /* Biru Cerah */
+    --accent-light: #e0f2fe;   /* Biru Sangat Muda (untuk background pilihan aktif) */
+    --border-color: #cbd5e1;   /* Garis Abu */
 }
 
-/* --- GENERAL SETUP --- */
+/* Setup Global - Paksa Teks Gelap */
 html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-primary);
+    background-color: var(--bg-color) !important;
+    color: var(--text-primary) !important; 
 }
 
 .stApp {
-    background-color: var(--bg-color);
-    background-image: radial-gradient(#334155 0.5px, transparent 0.5px);
-    background-size: 20px 20px; /* Pattern titik halus */
+    background-color: var(--bg-color) !important;
 }
 
-/* --- HEADER SECTION --- */
+/* ============================================================
+   [NEW UI] TRANSFORMASI RADIO BUTTON MENJADI KARTU (CARD SELECT)
+   ============================================================ */
+
+/* 1. Atur Jarak antar pilihan */
+div.stRadio > div[role="radiogroup"] {
+    gap: 12px;
+}
+
+/* 2. Ubah Label Pilihan menjadi Kotak Kartu */
+div.stRadio div[role="radiogroup"] > label {
+    background-color: #ffffff;
+    padding: 16px 20px;       /* Padding besar = area tekan luas */
+    border-radius: 12px;      /* Sudut membulat */
+    border: 2px solid #e2e8f0;/* Border abu tipis default */
+    cursor: pointer;          /* Kursor tangan */
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px !important; /* Reset margin bawaan */
+}
+
+/* 3. Efek Hover (Saat mouse diarahkan) */
+div.stRadio div[role="radiogroup"] > label:hover {
+    border-color: var(--accent);
+    background-color: #f0f9ff;
+    transform: translateX(5px); /* Geser sedikit ke kanan agar interaktif */
+}
+
+/* 4. STATE AKTIF (Saat dipilih) - Menggunakan :has selector */
+div.stRadio div[role="radiogroup"] > label:has(input:checked) {
+    background-color: var(--accent-light) !important; /* Latar Biru Muda */
+    border-color: var(--accent) !important;           /* Border Biru Tebal */
+    box-shadow: 0 4px 6px rgba(2, 132, 199, 0.15);    /* Glow halus */
+}
+
+/* 5. Memperbesar & Memperjelas Teks Pilihan */
+div.stRadio div[role="radiogroup"] label div[data-testid="stMarkdownContainer"] p {
+    color: var(--text-primary) !important;
+    font-size: 1.05rem; /* Font agak besar */
+    font-weight: 500;
+    margin: 0;
+    padding-left: 5px; /* Jarak dari bulatan radio */
+}
+
+/* 6. Memperbesar Bulatan Radio Button-nya (Opsional, agar seimbang) */
+div.stRadio div[role="radiogroup"] label div[role="radio"] {
+    transform: scale(1.2); /* Memperbesar bulatan 20% */
+}
+
+
+/* ============================================================
+   STYLE LAINNYA (HEADER, BUTTON, DLL)
+   ============================================================ */
+
+/* --- HEADER --- */
 .header-container {
     text-align: center;
     padding-top: 2rem;
-    animation: fadeIn 0.8s ease-out;
+    padding-bottom: 1rem;
 }
 
 .big-icon {
     font-size: 5rem;
-    color: var(--gold);
     margin-bottom: 0.5rem;
     display: inline-block;
-    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.3)); /* Glow halus pada ikon */
 }
 
 .app-title {
     font-family: 'Merriweather', serif;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
+    color: var(--accent) !important; 
     margin: 0;
-    color: var(--text-primary);
 }
 
-/* --- DESCRIPTION TEXT (BARU) --- */
+/* --- KARTU DESKRIPSI --- */
 .description-card {
-    background-color: rgba(30, 41, 59, 0.6); /* Transparan dikit */
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px auto;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 10px auto 30px auto;
     max-width: 700px;
-    border-left: 4px solid var(--accent); /* Aksen garis biru di kiri */
-    text-align: left; /* Rata kiri agar mudah dibaca lansia */
+    border: 1px solid var(--border-color);
+    border-left: 6px solid var(--accent);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .desc-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary) !important;
+    margin-bottom: 10px;
 }
 
 .desc-body {
-    font-size: 1rem;
-    line-height: 1.6; /* Jarak antar baris lega */
-    color: #e2e8f0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-secondary) !important;
 }
 
-/* --- BUTTON LAYOUT FIX --- */
-/* Memastikan semua tombol punya tinggi minimal yang sama agar rapi */
+/* --- TOMBOL (BUTTONS) --- */
 div.stButton > button {
     width: 100%;
-    min-height: 70px; /* Tinggi tombol seragam */
-    font-size: 1.1rem !important;
+    min-height: 70px;
+    font-size: 1rem !important;
     font-weight: 600;
-    border-radius: 10px;
-    border: 1px solid #334155;
-    background-color: #1e293b;
-    color: white;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border-radius: 12px;
+    background-color: white !important;
+    color: var(--text-primary) !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* Hover Effect */
 div.stButton > button:hover {
-    border-color: var(--accent);
-    background-color: #263c52;
-    color: var(--accent);
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    background-color: #f0f9ff !important;
     transform: translateY(-2px);
 }
 
-div.stButton > button:active {
-    transform: translateY(0);
-}
-
-/* Tombol Utama (Kalkulator) kita beri style khusus lewat CSS selector "first-of-type" di Python nanti agak sulit, 
-   jadi kita buat semua tombol konsisten tapi rapi. */
-
 /* --- UTILS --- */
-#MainMenu, footer, header {visibility: hidden;}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+#MainMenu, footer, header {
+    visibility: hidden;
+    display: none !important;
 }
 
 hr {
-    border-color: #334155;
-    opacity: 0.5;
     margin: 30px 0;
+    border: 0;
+    border-top: 1px solid var(--border-color);
 }
 
-/* --- QUESTION CARD STYLE --- */
-.question-card {
-    background-color: #1e293b;
-    border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-left: 6px solid #38bdf8; /* Garis biru di kiri sebagai penanda */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* HIDE TOOLBAR */
+div[data-testid="stToolbar"],
+div[class*="stViewerBadge"] {
+    visibility: hidden;
+    display: none !important;
 }
-
-/* Efek saat mouse diarahkan (Hover) - Animasi Halus */
-.question-card:hover {
-    transform: translateY(-5px); /* Naik sedikit */
-    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.15); /* Glow biru halus */
-    background-color: #24344d;
-}
-
-.q-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.q-icon {
-    font-size: 2.5rem;
-    background: rgba(255,255,255,0.1);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-.q-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #f1f5f9;
-}
-
 /* --- HIDE STREAMLIT BRANDING (ULTIMATE) --- */
 
 /* 1. Hilangkan Menu Hamburger (Kanan Atas) */

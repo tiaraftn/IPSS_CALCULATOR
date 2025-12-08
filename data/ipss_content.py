@@ -94,51 +94,49 @@ def get_qol_message(total_score, qol_score):
         return "ℹ️ Catatan Penting: Bagaimanapun kualitas hidup yang Bapak rasakan karena gejala ini, tetap utamakan ikuti rekomendasi pengobatan yang diberikan ya!"
 
 # --- LOGIKA REKOMENDASI DETIL (BARU) ---
+# ... kode sebelumnya biarkan saja ...
+
 def get_detailed_advice(total_score):
-    """
-    Mengembalikan teks saran berdasarkan kategori skor.
-    Menggunakan format HTML sederhana untuk list agar rapi di Streamlit.
-    """
     if total_score <= 7:
         # MILD
         return """
-        <div style="text-align: left; margin-top: 10px;">
-            <p><strong>Status:</strong> Kondisi Anda kemungkinan besar masih aman, namun perlu dipantau.</p>
-            <p><strong>Rekomendasi Utama:</strong> <span style="color: #22c55e; font-weight: bold;">Watchful Waiting (Pemantauan Aktif).</span> Biasanya belum memerlukan obat-obatan atau operasi, cukup perubahan gaya hidup.</p>
-            <p><strong>Saran Gaya Hidup:</strong></p>
-            <ul style="line-height: 1.6;">
-                <li><strong>Kurangi Cairan Malam Hari:</strong> Batasi minum setelah makan malam agar tidak sering bangun pipis.</li>
-                <li><strong>Hindari Iritan:</strong> Kurangi konsumsi kopi (kafein), alkohol, dan makanan pedas/asin karena dapat mengiritasi kandung kemih.</li>
-                <li><strong>Cek Obat Lain:</strong> Hati-hati dengan obat flu yang mengandung <em>fenilpropanolamin</em>, karena bisa memperparah gejala.</li>
-                <li><strong>Jangan Menahan:</strong> Jangan biasakan menahan kencing terlalu lama.</li>
-                <li><strong>Jadwal Ulang:</strong> Lakukan tes ini lagi dalam 6 bulan untuk melihat apakah ada perubahan.</li>
-            </ul>
-        </div>
-        """
+<div style="text-align: left; margin-top: 10px;">
+<p><strong>Status:</strong> Kondisi Anda kemungkinan besar masih aman, namun perlu dipantau.</p>
+<p><strong>Rekomendasi Utama:</strong> <span style="color: #22c55e; font-weight: bold;">Watchful Waiting (Pemantauan Aktif).</span> Biasanya belum memerlukan obat-obatan atau operasi, cukup perubahan gaya hidup.</p>
+<p><strong>Saran Gaya Hidup:</strong></p>
+<ul style="line-height: 1.6; padding-left: 20px;">
+<li><strong>Kurangi Cairan Malam Hari:</strong> Batasi minum setelah makan malam agar tidak sering bangun pipis.</li>
+<li><strong>Hindari Iritan:</strong> Kurangi konsumsi kopi (kafein), alkohol, dan makanan pedas/asin.</li>
+<li><strong>Cek Obat Lain:</strong> Hati-hati dengan obat flu yang mengandung <em>fenilpropanolamin</em>.</li>
+<li><strong>Jangan Menahan:</strong> Jangan biasakan menahan kencing terlalu lama.</li>
+<li><strong>Jadwal Ulang:</strong> Lakukan tes ini lagi dalam 6 bulan.</li>
+</ul>
+</div>
+"""
     elif 8 <= total_score <= 19:
         # MODERATE
         return """
-        <div style="text-align: left; margin-top: 10px;">
-            <p><strong>Status:</strong> Gejala Anda mulai mengganggu kualitas hidup dan memerlukan evaluasi medis.</p>
-            <p><strong>Rekomendasi Utama:</strong> <span style="color: #f59e0b; font-weight: bold;">Disarankan untuk berkonsultasi dengan dokter (Urolog).</span></p>
-            <p><strong>Langkah Selanjutnya:</strong></p>
-            <ul style="line-height: 1.6;">
-                <li><strong>Pemeriksaan Lanjutan:</strong> Dokter mungkin akan menyarankan pemeriksaan tambahan seperti USG prostat atau tes pancaran urine (Uroflowmetry).</li>
-                <li><strong>Opsi Terapi:</strong> Jika gejala dirasa mengganggu aktivitas sehari-hari, dokter dapat meresepkan obat-obatan (seperti penghambat alfa atau penghambat 5-alfa reduktase) untuk melancarkan kencing dan mengecilkan prostat.</li>
-                <li><strong>Catatan Harian:</strong> Disarankan membuat "Catatan Harian Berkemih" (Voiding Diary) sebelum ke dokter untuk membantu diagnosis.</li>
-            </ul>
-        </div>
-        """
+<div style="text-align: left; margin-top: 10px;">
+<p><strong>Status:</strong> Gejala Anda mulai mengganggu kualitas hidup dan memerlukan evaluasi medis.</p>
+<p><strong>Rekomendasi Utama:</strong> <span style="color: #f59e0b; font-weight: bold;">Disarankan untuk berkonsultasi dengan dokter (Urolog).</span></p>
+<p><strong>Langkah Selanjutnya:</strong></p>
+<ul style="line-height: 1.6; padding-left: 20px;">
+<li><strong>Pemeriksaan Lanjutan:</strong> USG prostat atau tes pancaran urine (Uroflowmetry).</li>
+<li><strong>Opsi Terapi:</strong> Obat-obatan untuk melancarkan kencing dan mengecilkan prostat.</li>
+<li><strong>Catatan Harian:</strong> Buat "Catatan Harian Berkemih" sebelum ke dokter.</li>
+</ul>
+</div>
+"""
     else:
-        # SEVERE (>= 20)
+        # SEVERE
         return """
-        <div style="text-align: left; margin-top: 10px;">
-            <p><strong>Status:</strong> Kondisi ini memerlukan penanganan medis segera untuk mencegah komplikasi.</p>
-            <p><strong>Rekomendasi Utama:</strong> <span style="color: #ef4444; font-weight: bold;">SEGERA konsultasi ke Dokter Spesialis Urologi.</span></p>
-            <p><strong>Langkah Selanjutnya:</strong></p>
-            <ul style="line-height: 1.6;">
-                <li><strong>Risiko Komplikasi:</strong> Tanpa penanganan, kondisi ini berisiko menyebabkan kencing macet total (retensi urine), infeksi saluran kemih berulang, atau gangguan fungsi ginjal.</li>
-                <li><strong>Terapi Agresif:</strong> Kemungkinan besar memerlukan kombinasi obat-obatan atau diskusi mengenai tindakan pembedahan (seperti TURP) jika obat tidak mempan.</li>
-            </ul>
-        </div>
-        """
+<div style="text-align: left; margin-top: 10px;">
+<p><strong>Status:</strong> Kondisi ini memerlukan penanganan medis segera untuk mencegah komplikasi.</p>
+<p><strong>Rekomendasi Utama:</strong> <span style="color: #ef4444; font-weight: bold;">SEGERA konsultasi ke Dokter Spesialis Urologi.</span></p>
+<p><strong>Langkah Selanjutnya:</strong></p>
+<ul style="line-height: 1.6; padding-left: 20px;">
+<li><strong>Risiko Komplikasi:</strong> Kencing macet total (retensi urine), infeksi saluran kemih, gangguan ginjal.</li>
+<li><strong>Terapi Agresif:</strong> Kombinasi obat-obatan atau tindakan pembedahan (TURP).</li>
+</ul>
+</div>
+"""
