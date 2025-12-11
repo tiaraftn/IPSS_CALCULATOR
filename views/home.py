@@ -31,7 +31,7 @@ def show_home():
 
     with col_tombol:
         # Teks tombol dibuat agak panjang agar proporsional
-        if st.button("📝   MULAI PENGECEKAN KESEHATAN (IPSS)"):
+        if st.button("📝   MULAI PENGECEKAN KESEHATAN (I-PSS)"):
             st.session_state['page'] = 'calculator'
             st.rerun()
             
