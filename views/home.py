@@ -41,7 +41,7 @@ def show_home():
     col1, col2 = st.columns(2)
     with col1:
         # Menggunakan \n agar baris baru rapi di HP
-        if st.button("ℹ️  Tentang Penyakit\nBenign Prostatic Hyperplasia (BPH)"):
+        if st.button("ℹ️  Tentang Penyakit\n<i>Benign Prostatic Hyperplasia</i> (BPH)"):
             st.session_state['page'] = 'about'
             st.rerun()
             
