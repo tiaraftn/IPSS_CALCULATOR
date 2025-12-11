@@ -29,37 +29,37 @@ SKOR_QOL_OPTS = [
 PERTANYAAN_IPSS = [
     {
         "id": "q1", "title": "Rasa Tidak Tuntas", "icon": "💧",
-        "detail": "Setelah selesai pipis, seberapa sering Bapak merasa seperti masih ada sisa atau belum keluar semua?",
+        "detail": "Dalam sebulan terakhir, setelah selesai pipis, seberapa sering Bapak merasa seperti masih ada sisa atau belum keluar semua?",
         "note": "Rasanya seperti ingin pipis lagi tak lama setelah selesai.", "scoring": SKOR_FREKUENSI
     },
     {
         "id": "q2", "title": "Sering Pipis (Frekuensi)", "icon": "⏱️",
-        "detail": "Seberapa sering Bapak harus balik lagi ke kamar mandi untuk pipis, padahal baru saja pipis kurang dari 2 jam yang lalu?",
+        "detail": "Dalam sebulan terakhir, seberapa sering Bapak harus balik lagi ke kamar mandi untuk pipis, padahal baru saja pipis kurang dari 2 jam yang lalu?",
         "note": "", "scoring": SKOR_FREKUENSI
     },
     {
         "id": "q3", "title": "Kencing Terputus-putus", "icon": "🚧",
-        "detail": "Saat sedang pipis, seberapa sering alirannya berhenti lalu jalan lagi (nyendat-nyendat)?",
+        "detail": "Dalam sebulan terakhir, saat sedang pipis, seberapa sering alirannya berhenti lalu jalan lagi (nyendat-nyendat)?",
         "note": "Bukan sengaja ditahan, tapi berhenti sendiri.", "scoring": SKOR_FREKUENSI
     },
     {
         "id": "q4", "title": "Tidak Bisa Menahan", "icon": "🏃",
-        "detail": "Seberapa sering Bapak merasa kebelet sekali sampai susah menahannya (harus buru-buru ke WC takut mengompol)?",
+        "detail": "Dalam sebulan terakhir, seberapa sering Bapak merasa kebelet sekali sampai susah menahannya (harus buru-buru ke WC takut mengompol)?",
         "note": "", "scoring": SKOR_FREKUENSI
     },
     {
         "id": "q5", "title": "Pancaran Lemah", "icon": "🚿",
-        "detail": "Seberapa sering aliran pipis Bapak terasa lemah atau pelan?",
+        "detail": "Dalam sebulan terakhir, seberapa sering aliran pipis Bapak terasa lemah atau pelan?",
         "note": "Pancarannya tidak jauh, atau jatuhnya dekat kaki.", "scoring": SKOR_FREKUENSI
     },
     {
         "id": "q6", "title": "Harus Mengedan", "icon": "💪",
-        "detail": "Seberapa sering Bapak harus ngeden atau memaksa dulu supaya air kencingnya bisa keluar?",
+        "detail": "Dalam sebulan terakhir, seberapa sering Bapak harus ngeden atau memaksa dulu supaya air kencingnya bisa keluar?",
         "note": "", "scoring": SKOR_FREKUENSI
     },
     {
         "id": "q7", "title": "Pipis Malam Hari", "icon": "🌙",
-        "detail": "Rata-rata, seberapa sering Bapak harus bangun dari tidur malam untuk pipis?",
+        "detail": "Dalam sebulan terakhir, rata-rata, seberapa sering Bapak harus bangun dari tidur malam untuk pipis?",
         "note": "Hitungan adalah jumlah kali terbangun karena dorongan ingin pipis.", "scoring": SKOR_NOKTURIA
     },
 ]
