@@ -16,7 +16,7 @@ def show_home():
                 Selamat datang di ProstataCheck.
             </div>
             <div class="desc-body">
-                Alat ini menggunakan kuesioner <b>IPSS <i>(Skor Gejala Prostat Internasional)</i></b>, standar medis yang digunakan dokter di seluruh dunia untuk mendeteksi dini pembesaran prostat (BPH).
+                Alat ini menggunakan kuesioner <b>I-PSS <i>(International Prostate Symptom Score)</i></b>, standar medis yang digunakan dokter di seluruh dunia untuk mendeteksi dini pembesaran prostat (BPH).
                 <br><br>
                 <i>Ketahui apakah gejala Bapak termasuk Ringan, Sedang, atau Berat, serta dapatkan saran perawatan yang tepat sekarang juga.</i>
             </div>
