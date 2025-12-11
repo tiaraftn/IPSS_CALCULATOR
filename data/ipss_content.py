@@ -121,8 +121,8 @@ def get_detailed_advice(total_score):
 <p><strong>Rekomendasi Utama:</strong> <span style="color: #f59e0b; font-weight: bold;">Disarankan untuk berkonsultasi dengan dokter (Urolog).</span></p>
 <p><strong>Langkah Selanjutnya:</strong></p>
 <ul style="line-height: 1.6; padding-left: 20px;">
-<li><strong>Pemeriksaan Lanjutan:</strong> USG prostat atau tes pancaran urine (Uroflowmetry).</li>
-<li><strong>Opsi Terapi:</strong> Obat-obatan untuk melancarkan kencing dan mengecilkan prostat.</li>
+<li><strong>Pemeriksaan Lanjutan:</strong> Dokter akan menyarankan untuk pemeriksaan lanjutan seperti USG prostat atau tes pancaran urine (Uroflowmetry).</li>
+<li><strong>Opsi Terapi:</strong> Dokter akan memberikan obat-obatan untuk melancarkan kencing dan mengecilkan prostat.</li>
 <li><strong>Catatan Harian:</strong> Buat "Catatan Harian Berkemih" sebelum ke dokter.</li>
 </ul>
 </div>
@@ -135,8 +135,8 @@ def get_detailed_advice(total_score):
 <p><strong>Rekomendasi Utama:</strong> <span style="color: #ef4444; font-weight: bold;">SEGERA konsultasi ke Dokter Spesialis Urologi.</span></p>
 <p><strong>Langkah Selanjutnya:</strong></p>
 <ul style="line-height: 1.6; padding-left: 20px;">
-<li><strong>Risiko Komplikasi:</strong> Kencing macet total (retensi urine), infeksi saluran kemih, gangguan ginjal.</li>
-<li><strong>Terapi Agresif:</strong> Kombinasi obat-obatan atau tindakan pembedahan (TURP).</li>
+<li><strong>Risiko Komplikasi:</strong> Jika tidak segera ditangani, kondisi Bapak akan meningkatkan risiko terjadinya kencing macet total (retensi urine), infeksi saluran kemih, gangguan ginjal.</li>
+<li><strong>Terapi Agresif:</strong> Tindakan yang akan diberikan dokter dapat berupa kombinasi obat-obatan atau tindakan pembedahan (contoh: TURP).</li>
 </ul>
 </div>
 """
